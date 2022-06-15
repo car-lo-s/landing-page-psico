@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>port</title>
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      text-decoration: none;
+    }
+    header {
+      background-color: #22333b;
+      height: 100vh;
+    }
+    header nav {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      border-bottom: 1px solid #cb7a60;
+    }
+    header nav a {
+      color: white;
+      padding: 20px 20px;
+      margin: 10px;
+    }
+    
+    header a:hover {
+      color: #cb7a60;
+    }
+    .descricao {
+      display: flex;
+      flex-direction: row;
+      padding-top: 50px;
+      align-items: center;
+      height: 70%;
+    }
+    .descricao div {
+      width: 60%;
+      /* padding-left: 70px; */
+    }
+    .descricao h2 {
+      color: #cb7a60;
+      font-size: 30px;
+      /* margin-bottom: 10px; */
+    }
+    .descricao h1 {
+      font-size: 35px;
+      color: white;
+      margin-bottom: 10px;
+    }
+    .descricao p {
+      color: #cb7a60;
+      margin-bottom: 30px;
+    }
+    .descricao a {
+      color: #cb7a60;
+      border: 1px solid #cb7a60;
+      padding: 10px 35px;
+    }
+    .img {
+      width: 40%;
+      text-align: center;
+    }
+    .img img {
+      width: 350px;
+    }
+    .sobre {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding-left: 10px;
+    }
+    .sobre h2 {
+      font-size: 45px;
+    }
+    .sobre div {
+      width: 50%;
+    }
+    .sobre-img {
+      text-align: center;
+    }
+    .sobre-img img {
+      width: 400px;
+    }
+    .servico {
+      background-color: #22333b;
+      display: flex;
+      flex-direction: column;
+    }
+    .servico h2 {
+      text-align: center;
+      color: white;
+      padding: 20px;
+      font-size: 35px;
+    }
+    .card {
+      /* padding-left: 70px; */
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding-bottom: 20px;
+    }
+    .card div {
+      height: 350px;
+      width: 250px;
+      background-color: white;
+      margin: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .card h3 {
+      border-bottom: 2px solid #cb7a60;
+    }
+    .card p {
+      text-align: justify;
+      padding: 10px;
+    }
+    .card img {
+      width: 50px;
+      padding: 5px;
+    }
+    .card div:hover {
+      background-color: lightcyan;
+    }
+    .artigo{
+        display: flex;
+        flex-direction: column;
+        height: 300px;
+    }
+    .artigo h2{
+        text-align: center;
+        font-size: 35px;
+        padding: 20px;
+    }
+    .artigo-card{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+    .artigo-card div{
+        height: 130px;
+        min-width: 120px;
+        width: 350px;
+        /* background-color: lightgreen; */
+        border: 2px solid #cb7a60;
+        margin: 10px;
+        padding: 10px;
+        text-align: justify;
+    }
+    .data{
+        color: #cb7a60;
+    }
+    .contato{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #22333b;
+        color: white;
+        border-top: 1px solid #cb7a60;
+    }
+    .contato h2{
+        font-size: 35px;
+        padding: 20px;
+    }
+    .contato div{
+        display: flex;
+        flex-direction: row;
+        width: 70%;
+        
+    }
+    .contato span{
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 25px;
+        color: white;
+    }
+    .contato form{
+        width: 50%;
+    }
+    .contato input{
+        width: 300px;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+    .contato button{
+        background-color: #22333b;
+        border: 2px solid #cb7a60;
+        padding: 10px 20px;
+        margin: 20px 0px;
+        color: #cb7a60;
+    }
+    .contato button:hover{
+        background-color: white;
+    }
+    footer{
+        text-align: center;
+        background-color: #22333b;
+        padding: 10px;
+        color: #cb7a60;
+    }
+    footer a{
+        color: #cb7a60;
+    }
+    .cont:hover{
+        background-color: white;
+    }
+    @media(max-width:600px){
+        header{
+            height: 400px;
+            min-height: 500px;
+        }
+        .descricao{
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+        }
+        .descricao div{
+            width: 90%;
+        }
+        .descricao img{
+            display: none;
+        }
+        .descricao h2{
+            font-size: 20px;
+        }
+        .descricao h1{
+            font-size: 25px;
+        }
+        .descricao p{
+            text-align: justify;
+        }
+        .sobre {
+            width: 100%;
+            /* background-color: #cb7a60; */
+        }
+        .sobre div{
+            /* background-color: blue; */
+        }
+        .sobre p{
+            width: 300px;
+            text-align: justify;
+            padding-bottom: 20px;
+            padding-left: 0;
+            /* background-color: red; */
+        }
+        .sobre h2{
+            font-size: 25px;
+            padding: 20px 0px;
+        }
+        .sobre img{
+            display: none;
+        }
+        .contato div{
+            width: 100%;
+        }
+        .contato span{
+            display: none;
+        }
+        .contato form{
+            width: 100%;
+            padding-left: 10px;
+           
+        }
+        .artigo{
+            height: 600px;
+        }
+        .artigo-card{
+            display: flex;
+            flex-direction: column;
+        }
+        .artigo-card div{
+            height: 130px;
+            width: 90%;
+        }
+        header nav a{
+            padding: 0;
+        }
+    }
+  </style>
+  <body>
+    <header>
+      <nav>
+        <a href="#primeiro">Home</a>
+        <a href="#segundo">Sobre</a>
+        <a href="#terceiro">Serviços</a>
+        <a href="#quarto">Contato</a>
+        <a href="#quinto">Artigos</a>
+      </nav>
+      <section class="descricao" id="primeiro">
+        <div>
+          <h2>Dra. Larissa Paranha</h2>
+          <h1>Serviço psicológico com qualidade e eficiência</h1>
+          <p>
+            of type and scrambled it to make a type specimen book. It has
+            survived not only five centuries, but also the leap into electronic
+            typesetting, remaining essentially unchanged. It was popularised in
+            the 1960s with the release of Letraset sheets containing Lorem Ipsum
+            passages, and more recently with desktop publishing software like
+            Aldus PageMaker including versions of Lorem Ipsum.
+          </p>
+          <a class="cont" href="">Contato</a>
+        </div>
+        <div class="img">
+          <img src="./img/girl.png" alt="" />
+        </div>
+      </section>
+    </header>
+    <section class="sobre" id="segundo">
+      <div>
+        <h2>Sobre mim</h2>
+        <p>
+          Contrary to popular belief, Lorem Ipsum is not simply random text. It
+          has roots in a piece of classical Latin literature from 45 BC, making
+          it over 2000 years old. Richard McClintock, a Latin professor at
+          Hampden-Sydney College in Virginia, looked up one of the more obscure
+          Latin words, consectetur, from a Lorem Ipsum passage, and going
+          through the cites of the word in classical literature, discovered the
+          undoubtable source. Lorem Ipsum comes from sections 1.10.32 and
+          1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and
+          Evil) by Cicero, written in 45 BC. This book is a treatise on the
+          theory of ethics, very popular during the Renaissance. The first line
+          of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in
+          section 1.10.32.
+        </p>
+      </div>
+      <div class="sobre-img">
+        <img src="./img/team.png" alt="" />
+      </div>
+    </section>
+    <section class="servico" id="terceiro">
+      <h2>Áreas de Atuação</h2>
+      <div class="card">
+        <div>
+          <img src="./img/cerebro.png" alt="" />
+          <h3>Neurociências</h3>
+          <p>
+            Contrary to popular belief, Lorem Ipsum is not simply random text.
+          </p>
+        </div>
+        <div>
+          <img src="./img/cinco.png" alt="" />
+          <h3>Neuropsicologia</h3>
+          <p>
+            Contrary to popular belief, Lorem Ipsum is not simply random text.
+          </p>
+        </div>
+        <div>
+          <img src="./img/dois.png" alt="" />
+          <h3>Psicobiologia</h3>
+          <p>
+            Contrary to popular belief, Lorem Ipsum is not simply random text.
+          </p>
+        </div>
+        <div>
+          <img src="./img/quatro.png" alt="" />
+          <h3>Psicomotricidade</h3>
+          <p>
+            Contrary to popular belief, Lorem Ipsum is not simply random text.
+          </p>
+        </div>
+        <div>
+          <img src="./img/tres.png" alt="" />
+          <h3>Avaliação Psicológica</h3>
+          <p>
+            Contrary to popular belief, Lorem Ipsum is not simply random text.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="contato" id="quarto">
+      <h2>Contato</h2>
+      <div>
+        <span>
+            <h3>Agende uma consulta agora mesmo, <br> preencha o formulário.</h3>
+        </span>
+        <form action="">
+            <p>
+                <label for="nome">Nome:</label><br>
+                <input type="text" name="nome" id="">
+            </p>
+            <p>
+                <label for="email">Email:</label><br>
+                <input type="email" name="" id="">
+            </p>
+            <p>
+                <label for="telefone">Telefone:</label><br>
+                <input type="tel" name="" id="">
+            </p>
+            <p>
+                <button>Agendar</button>
+            </p>
+        </form>
+      </div>
+    </section>
+    <section class="artigo" id="quinto">
+      <h2>Artigos</h2>
+      <div class="artigo-card">
+        <div>
+          <p>
+            Avaliação dos efeitos do jejum intermitente sobre a sensibilização
+            comportamental imediata induzida por modafinil em ratos adolescentes
+            e adultos
+          </p>
+          <p class="data">22 março 2019</p>
+        </div>
+        <div>
+          <p>
+            Avaliação etológica dos efeitos tardios da privação alimentar
+            intermitente sobre a administração aguda de etanol em ratos
+            adolescentes e adultos
+          </p>
+          <p class="data">14 outubro 2020</p>
+        </div>
+        <div>
+          <p>
+            Avaliação etológica dos efeitos da privação alimentar diurna per se
+            em ratos adolescentes e adultos
+          </p>
+          <p class="data">09 agosto 2021</p>
+        </div>
+      </div>
+    </section>
+    <footer>
+        <p>Criado por Carlos</p>
+        <!-- <p><a href="https://github.com/car-lo-s">Git</a></p> -->
+    </footer>
+  </body>
+</html>
